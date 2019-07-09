@@ -17,10 +17,10 @@ router.post('/', (req, res) => {
     newItem.save().then(item => res.json(item));
 });
 
-router.delete('/:id', (req, res) => {
-    Item.findById(req.params.id)
-    .then(item => item.remove().then(() => res.json({success: true})))
-});
+// router.delete('/:id', (req, res) => {
+//     Item.findById(req.params.id)
+//     .then(item => item.remove().then(() => res.json({success: true})))
+// });
 
 
 module.exports = router;
