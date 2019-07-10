@@ -12,7 +12,12 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
     const newItem = new Item({
         name: req.body.name,
-        email: req.body.email   
+        email: req.body.email,
+        hackathon: req.body.hackathon,
+        hackathon_date: req.body.hackathon_date,
+        location: req.body.location,
+        prizes: req.body.prizes,
+        t_link: req.body.t_link
     })
     newItem.save().then(item => res.json(item));
 });

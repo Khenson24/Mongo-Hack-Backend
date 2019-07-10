@@ -5,7 +5,9 @@ const app = express();
 const path = require('path');
 const PORT = process.env.PORT || 4000;
 
-const items = require('./routes/api/items')
+const items = require('./routes/api/items');
+
+// const items = express.Router().use(require('./routes/api/items'))
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -18,7 +20,7 @@ mongoose
     .catch(err => console.log(err));
 
 
-app.use('/routes/api/items', items);
+app.use('/api/items', items);
   
 
 app.use(express.static(path.join(__dirname, 'client')));
