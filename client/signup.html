@@ -10,7 +10,7 @@
         <div class="btn from-right"><a href="login.html"> LOGIN</a></div>
         <div class="btn from-middle"><a href="signup.html">SIGN UP</a></div>   
 
-    <form method="POST" action="/api/items">
+    <form id="ten"method="POST" action="/api/Hacks" onsubmit=click()>
         <label>Name:<input type="text" name="name" required></label>
         <br>
         <label>Email:<input type="text" name="email" required></label>
@@ -30,6 +30,18 @@
 
         <input type="submit" value="Submit">
     </form>
-    <a href="/view-feedbacks">View feedbacks</a>
+    <br> <br> <br> <br>
+    <form id="nine"method="POST" action="/api/Users">
+        <!-- <label>Name:<input type="text" name="name" required></label>
+        <br> -->
+        <label>Email:<input type="text" name="email" required></label>
+        <br>
+        <label>Password:<input type="text" name="password" required></label>
+        <br>       
+        <input type="submit" value="Submit">
+    </form>
+
+    <script src="signup.js"></script>
 </body>
+
 </html>

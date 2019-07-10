@@ -3,11 +3,13 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser')
 const app = express();
 const path = require('path');
+
 const PORT = process.env.PORT || 4000;
 
-const items = require('./routes/api/items');
+const Hacks = require('./routes/api/Hacks');
+const Users = require('./routes/api/Users');
 
-// const items = express.Router().use(require('./routes/api/items'))
+// const Hacks = express.Router().use(require('./routes/api/Hacks'))
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -20,7 +22,9 @@ mongoose
     .catch(err => console.log(err));
 
 
-app.use('/api/items', items);
+app.use('/api/Hacks', Hacks);
+app.use('/api/Users', Users);
+
   
 
 app.use(express.static(path.join(__dirname, 'client')));
