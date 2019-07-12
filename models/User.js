@@ -28,12 +28,12 @@ const UserSchema = new Schema({
     }
 });
 
-// UserSchema.methods.generateHash = function(password){
-// 	return bcrypt.hashSync(password, bcrypt.genSaltSync(9));
-// }
+UserSchema.methods.generateHash = function(password){
+	return bcrypt.hashSync(password, bcrypt.genSaltSync(9));
+}
 
-// UserSchema.methods.validPassword = function(password){
-// 	return bcrypt.compareSync(password, this.local.password);
-// }
+UserSchema.methods.validPassword = function(password){
+	return bcrypt.compareSync(password, this.local.password);
+}
 
 module.exports = User = mongoose.model('User', UserSchema)
