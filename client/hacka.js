@@ -20,12 +20,10 @@ function blah() {
         })
         .then(function (myJson) {
             const data = JSON.stringify(myJson.events);
-            // console.log(data);
-        
-            for(i=0;i<data.length;i++){
-                // console.log(JSON.stringify(myJson.events[i]));  
-                rect.innerHTML += JSON.stringify(myJson.events[i].name.text) + "<br/>" + "<br/>";
-                rect1.innerHTML += JSON.stringify(myJson.events[i].start.local) + " " + JSON.stringify(myJson.events[i].end.local) + "<br/>" + "<br/>";
-        }
+                for(i=0;i<data.length;i++){
+                    console.log(JSON.stringify(myJson.events[i].name.text));
+                    
+                    rect.innerHTML += JSON.stringify(myJson.events[i].name.text) + "<br>" + JSON.stringify(myJson.events[i].start.local) + " " + JSON.stringify(myJson.events[i].end.local) + "<br/>" + "<br/>";
+            }
         });
 }
